@@ -9,12 +9,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.nio.channels.Selector;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Playwright_04_Commands_01 {
+public class Playwright_04_Commands_Browser {
     WebDriver driver;
     Playwright playwright;
     BrowserType browserType;
