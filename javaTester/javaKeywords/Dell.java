@@ -1,22 +1,21 @@
 package javaKeywords;
 
-public class Computer {
-    // Biến - Variable/ Properties
-    //1- biến non-static
-    //2- biến static
-    //3- biến final
-    //4- biến toàn cục
-    //5- biến cục bộ
+//public class Dell {
 
-    // Hàm - Method/ Function
-    // 1- hàm non-static
-    //2- hàm static
-    //3- hàm abstract
+ //   static void main(){
+       // Computer com = new Computer();
+        //com.ramName ="";
+        //com.touchPC();
 
-    // Lớp - Class
-    //1- final class
-    //2- abstract class
-    static void main(String[] args){
+      //  com.ssd="";
+      //  com.lcdName ="";
+       // com.fullName ="";
+       // com.cityName ="";
 
-    }
-}
+        //Computer.cityName ="";
+        //com.addressName ="214 Lê Lợi";
+
+
+
+   // }
+//}

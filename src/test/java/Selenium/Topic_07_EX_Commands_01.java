@@ -7,9 +7,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
-public class Topic_07_EX_Commands {
+public class Topic_07_EX_Commands_01 {
     WebDriver driver;
     By registerButton = By.xpath("//form[@id='frmLogin']//button[text()='ĐĂNG KÝ']");
 
