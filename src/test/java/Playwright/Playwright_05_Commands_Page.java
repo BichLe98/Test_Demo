@@ -2,10 +2,16 @@ package Playwright;
 
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.AriaRole;
+import com.microsoft.playwright.options.WaitForSelectorState;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Playwright_05_Commands_Page {
     WebDriver driver;
@@ -26,7 +32,7 @@ public class Playwright_05_Commands_Page {
     }
 
     @Test
-    public void TC_01_Command() {
+    public void TC_01_Command() throws InterruptedException {
         /* I-Navigation */
 
         page.navigate("https://www.facebook.com/");
@@ -71,10 +77,53 @@ public class Playwright_05_Commands_Page {
         // new Select(driver.findElement(By.cssSelector("div.toolbar-bottom select[title ='Sort By']"))).selectByVisibleText("");
 
 
+        page.dragAndDrop("div#draggable","div#droptarget");
+        // new Actions(driver).dragAndDrop(driver.findElement(By.cssSelector("")), driver.findElement(By.cssSelector("")));
+
+        String projectPath = System.getProperty("user.dir");
+
+        page.setInputFiles("input[type='file']", Paths.get(projectPath + "/uploadFiles/Test.text"));
+        page.setInputFiles("input[type='file']", new Path[]{
+                Paths.get(projectPath + "/uploadFiles/Test.pdf"),
+                Paths.get(projectPath + "/uploadFiles/Test1.pdf")
+        });
+        page.textContent("div.page-title>h1");
+        page.innerHTML("div.page-title>h1");
+        page.innerText("div.page-title>h1");
+
+        page.getAttribute("input#search","placeholder");
+        // Search entire store here...
+
+        page.isVisible("");
+        page.isEnabled("");
+        page.isDisabled("");
+        page.isChecked("");
+        page.isEditable("");
+
+        page.waitForSelector("div.page-title>h1");
+
+        page.waitForSelector(".toast-success",new Page.WaitForSelectorOptions()
+                .setState(WaitForSelectorState.VISIBLE).setTimeout(10000));
+
+        page.waitForTimeout(50000);
+        Thread.sleep(5000);
+
+        // Ép kiểu tường minh
+        Object jsValue = page.evaluate("document.domain;");
+        String domainName =(String) jsValue;
+
+        // Lấy ra Page Source Code
+        page.content();
+        // driver.getPageSource()
+
+        page.isClosed();
+
+
+
+
+
         Locator locator = page.locator("//div[@id='content']/h1");
         locator.click();
-
-
 
 
 
