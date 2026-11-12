@@ -61,7 +61,7 @@ public class Topic_08_Textbox_TextArea {
                 "/following-sibling::div/input")).sendKeys("123-6569-86326");
 
         driver.findElement(By.xpath("//label[text()='Comments']/parent::div" +
-                "/following-sibling::div/textarea")).sendKeys("Passport Due Date\n" + "10/2027");
+                "/following-sibling::div/textarea")).sendKeys("Passport Due Date" + "10/2027");
 
         driver.findElement(By.xpath("//button[contains(string(),'Save')]")).click();
         Assert.assertTrue(isLoadingIconHidden());
