@@ -79,6 +79,10 @@ public class Topic_09_Default_Dropdown {
 
         Assert.assertEquals(dealerList.size(),16);
 
+        for (WebElement dealer : dealerList){
+            System.out.println("Dealer name =" + dealer.getText());
+        }
+
 
 
 
